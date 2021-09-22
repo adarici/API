@@ -6,6 +6,7 @@ import org.junit.Test;
 
 
 import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.*;
 
 public class ReviewGet05 extends HerOkuAppBaseUrl {
@@ -36,7 +37,6 @@ public class ReviewGet05 extends HerOkuAppBaseUrl {
             assertThat().
             statusCode(200);
     assertTrue(response.asString().contains("bookingid"));
-
 
     }
 }

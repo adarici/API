@@ -52,8 +52,8 @@ public class Post01 extends HerOkuAppBaseUrl {
 
         //2.Step: Set the expected data
         Map<String, String> expectedBookingdates = new HashMap<>();
-        expectedBookingdates.put("checkin", "2021-09-09");
-        expectedBookingdates.put("checkout", "2021-09-21");
+        expectedBookingdates.put("checkin", "2020-09-09");
+        expectedBookingdates.put("checkout", "2020-09-21");
 
         Map<String, Object> expectedData = new HashMap<>();
         expectedData.put("firstname", "Selim");
@@ -77,6 +77,10 @@ public class Post01 extends HerOkuAppBaseUrl {
 
         assertEquals(expectedBookingdates.get("checkin"), ((Map)((Map)actualData.get("booking")).get("bookingdates")).get("checkin"));
         assertEquals(expectedBookingdates.get("checkout"), ((Map)((Map)actualData.get("booking")).get("bookingdates")).get("checkout"));
+
+
+
+
     }
 
 }

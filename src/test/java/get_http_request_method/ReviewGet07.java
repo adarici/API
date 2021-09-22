@@ -5,16 +5,15 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;
 
+public class ReviewGet07 extends JsonPlaceHolderBaseUrl {
 
-public class Get07 extends JsonPlaceHolderBaseUrl {
-/*
+    /*
  Given
 	   	https://jsonplaceholder.typicode.com/todos
 		When
@@ -29,20 +28,20 @@ public class Get07 extends JsonPlaceHolderBaseUrl {
 			   Assert that "delectus aut autem" is one of the titles whose id is less than 5
  */
     @Test
-    public void get07(){
+    public void get07() {
 
         //1. Step
-        spec.pathParam("first","todos");
+        spec.pathParam("first", "todos");
         // 2, Step: Set the expected data
 
         // 3. Step
-        Response response=given().spec(spec).when().get("/{first}");
+        Response response = given().spec(spec).when().get("/{first}");
         response.prettyPrint();
 
         //4. Step
         response.then().assertThat().statusCode(200);
 
-       //  2)Print all userIds less than 5 on the console
+        //  2)Print all userIds less than 5 on the console
         JsonPath json = response.jsonPath();
         List<Integer> idList = json.getList("findAll{it.id>190}.id");// Groovy Language
         System.out.println(idList);//[191, 192, 193, 194, 195, 196, 197, 198, 199, 200]
@@ -54,21 +53,15 @@ public class Get07 extends JsonPlaceHolderBaseUrl {
         List<Integer> userIdList = json.getList("findAll{it.userId<5}.userId");
         System.out.println(userIdList);
 
-        //Assert that maximum userId less than 5 is 4
-
         Collections.sort(userIdList);
-        assertEquals((Integer)4,userIdList.get(userIdList.size()-1));
+        assertEquals((Integer)4, userIdList.get(userIdList.size()-1));
 
-    //Print all titles whose ids are less than 5
-        List<String> titleList = json.getList("findAll{it.userId<5}.title");
+        List<String> titleList = json.getList("findAll{it.id<5}.title");
         System.out.println(titleList);
-        // Assert that "delectus aut autem" is one of the titles whose id is less than 5
-        assertTrue(titleList.contains("delectus aut autem"));
 
-        assertTrue(titleList.stream().anyMatch(t->t.equals("delectus aut autem")));
+        assertTrue(titleList.contains("delectus aut autem"));
 
 
 
     }
-
 }

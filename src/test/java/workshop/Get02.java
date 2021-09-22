@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;
 
 
-public class Gettemedigimiz extends HerOkuAppBaseUrl {
+public class Get02 extends HerOkuAppBaseUrl {
 
 
     @Test

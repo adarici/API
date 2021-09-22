@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class Demo03 extends JsonPlaceHolderBaseUrl {
+public class Get03 extends JsonPlaceHolderBaseUrl {
 /*
  Given
             https://jsonplaceholder.typicode.com/todos/23
