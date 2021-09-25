@@ -1,13 +1,13 @@
 package pojos;
 
-public class Bookingdates {
+public class BookingdatesPojo {
 
     private String checkin;
     private String checkout;
 
-    public Bookingdates() {
+    public BookingdatesPojo() {
     }
-    public Bookingdates(String checkin, String checkout) {
+    public BookingdatesPojo(String checkin, String checkout) {
         this.checkin = checkin;
         this.checkout = checkout;
     }

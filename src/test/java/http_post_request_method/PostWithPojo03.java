@@ -6,7 +6,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.BookingPojo;
-import pojos.Bookingdates;
+import pojos.BookingdatesPojo;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;
@@ -52,7 +52,7 @@ public class PostWithPojo03 extends HerOkuAppBaseUrl {
         spec.pathParam("first", "booking");
 
         //2.Step: Set the post request body
-        Bookingdates bookingdates = new Bookingdates("2021-09-21", "2021-12-21");
+        BookingdatesPojo bookingdates = new BookingdatesPojo("2021-09-21", "2021-12-21");
         BookingPojo postRequestBody = new BookingPojo("Ali", "Darici", 999, true, bookingdates, "Breakfast with white tea, Dragon juice");
 
         //3.Step: Send the request get the response

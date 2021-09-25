@@ -4,7 +4,7 @@ import base_urls.HerOkuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.BookingPojo;
-import pojos.Bookingdates;
+import pojos.BookingdatesPojo;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;
@@ -37,7 +37,7 @@ public class GetWithPojo01 extends HerOkuAppBaseUrl {
         spec.pathParams("first", "booking", "second", 2);
 
         //2.Step: Set the expected data
-        Bookingdates bookingdates = new Bookingdates("2015-10-21", "2017-03-07");
+        BookingdatesPojo bookingdates = new BookingdatesPojo("2015-10-21", "2017-03-07");
         BookingPojo expectedData = new BookingPojo("Susan", "Brown", 444, false, bookingdates);
 
         //3.Step: Send the request and get the response
