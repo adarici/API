@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.*;
 
-public class Get08 extends DummyBaseUrl{
+public class DummyDTGet08 extends DummyBaseUrl{
     /*
          When
 		     I send a GET Request to the URL http://dummy.restapiexample.com/api/v1/employee/
